@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.syedtalha.orion"
+    android:versionCode="3"
+    android:versionName="1.1.1" >
+
+    <uses-feature android:name="android.hardware.usb.accessory" />
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+
+    <application
+        android:name=".application.OrionApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service android:name=".services.OrionBackgroundService" />
+
+        <activity
+            android:name=".activities.BotServiceStarterActivity"
+            android:label="@string/title_activity_bot_service_starter" >
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
+                android:resource="@xml/accessory_filter" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".activities.TestActivity"
+            android:label="@string/title_activity_test" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.NativeManualOverrideActivity"
+            android:label="@string/title_activity_native_manual_override"
+            android:parentActivityName=".activities.BotServiceStarterActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.syedtalha.orion.activities.BotServiceStarterActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ServerActivity"
+            android:label="@string/title_activity_server"
+            android:parentActivityName=".activities.BotServiceStarterActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.syedtalha.orion.activities.BotServiceStarterActivity" />
+        </activity>
+        <activity
+            android:name="com.syedtalha.orion.activities.RemoteControlActivity"
+            android:label="@string/title_activity_remote_control"
+            android:parentActivityName=".activities.TestActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.syedtalha.orion.activities.TestActivity" />
+        </activity>
+    </application>
+
+</manifest>
