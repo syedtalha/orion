@@ -3,7 +3,6 @@
 
     <string name="app_name">Orion</string>
     <string name="title_activity_bot_service_starter">BotServiceStarterActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_test">ORION</string>
     <string name="title_activity_native_manual_override">Manual Override</string>
     <string name="action_settings">Settings</string>

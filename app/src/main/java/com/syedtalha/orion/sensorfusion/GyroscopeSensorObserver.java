@@ -30,5 +30,5 @@ public interface GyroscopeSensorObserver
 	 * @param gyroscope the rotation values (x, y, z)
 	 * @param timeStamp the time of the sensor update.
 	 */
-	public void onGyroscopeSensorChanged(float[] gyroscope, long timeStamp);
+	void onGyroscopeSensorChanged(float[] gyroscope, long timeStamp);
 }

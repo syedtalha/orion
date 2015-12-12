@@ -30,6 +30,6 @@ public interface GravitySensorObserver
 	 * @param gravity the gravity values (x, y, z)
 	 * @param timeStamp the time of the sensor update.
 	 */
-	public void onGravitySensorChanged(float[] gravity,
-			long timeStamp);
+	void onGravitySensorChanged(float[] gravity,
+								long timeStamp);
 }

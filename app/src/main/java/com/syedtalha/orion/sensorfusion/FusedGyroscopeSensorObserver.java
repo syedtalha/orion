@@ -14,5 +14,5 @@ public interface FusedGyroscopeSensorObserver
 	 * @param angularVelocity the angular velocity of the device (x,y,z).
 	 * @param timeStamp the time stamp of the measurement.
 	 */
-	public void onAngularVelocitySensorChanged(float[] angularVelocity, long timeStamp);
+	void onAngularVelocitySensorChanged(float[] angularVelocity, long timeStamp);
 }

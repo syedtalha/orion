@@ -126,6 +126,7 @@ public class BotControlRunnable implements Runnable {
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					break;
 				}	
 				
 				this.setxSpeed(OrionUtilsAndConstants.fromByteArray(new byte[] {serverBuffer[0],serverBuffer[1],serverBuffer[2],serverBuffer[3]}));

@@ -36,8 +36,7 @@ public class BotServiceStarterActivity extends Activity implements OnCheckedChan
 	private ParcelFileDescriptor mFileDescriptor;
 	private FileInputStream mInputStream;
 	private FileOutputStream mOutputStream;
-;
-	
+
 	ToggleButton serviceToggler;
 	Intent serviceIntent;
 	
@@ -108,7 +107,7 @@ public class BotServiceStarterActivity extends Activity implements OnCheckedChan
 			String action = intent.getAction();
 			if (ACTION_USB_PERMISSION.equals(action)) {
 				synchronized (this) {
-					UsbAccessory accessory = (UsbAccessory) intent
+					UsbAccessory accessory = intent
 							.getParcelableExtra(UsbManager.EXTRA_ACCESSORY);// UsbManager.getAccessory(serviceIntent);
 					if (intent.getBooleanExtra(
 							UsbManager.EXTRA_PERMISSION_GRANTED, false)) {
@@ -120,7 +119,7 @@ public class BotServiceStarterActivity extends Activity implements OnCheckedChan
 					mPermissionRequestPending = false;
 				}
 			} else if (UsbManager.ACTION_USB_ACCESSORY_DETACHED.equals(action)) {
-				UsbAccessory accessory = (UsbAccessory) intent
+				UsbAccessory accessory = intent
 						.getParcelableExtra(UsbManager.EXTRA_ACCESSORY);// UsbManager.getAccessory(serviceIntent);
 				if (accessory != null && accessory.equals(mAccessory)) {
 					closeAccessory();

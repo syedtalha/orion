@@ -21,7 +21,7 @@ public class VehicleSystem {
 	}
 	
 	//MISCELANEOUS
-	CommunicationSendingRunnable commnSendingRunnable;
+	final CommunicationSendingRunnable commnSendingRunnable;
 	CommunicationDumbSensorDataReceptionRunnable commnReceptionRunnable;
 	RobotControlRunnable robotControlRunnable;
 	BigInteger directionBitSet;
@@ -457,6 +457,7 @@ public class VehicleSystem {
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+						break;
 					}
 					if (frontRightMotor.getNextSpeed() >= 0) {
 						directionBitSet = directionBitSet.setBit(0);
@@ -543,31 +544,16 @@ public class VehicleSystem {
 
 
 		public boolean isMovingForward() {
-			if (getNextSpeed()>0)	{
-				return true;
-			}
-			else 	{
-				return false;
-			}
+			return getNextSpeed() > 0;
 		}
 		
 		
 		public boolean isMovingBackward() {
-			if (getNextSpeed()<0)	{
-				return true;
-			}
-			else 	{
-				return false;
-			}
+			return getNextSpeed() < 0;
 		}
 
 		public boolean isStopped()		{
-			if (getNextSpeed()==0)	{
-				return true;
-			}
-			else {
-				return false;
-			}
+			return getNextSpeed() == 0;
 			
 		}
 

@@ -2,6 +2,7 @@ package com.syedtalha.orion.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.syedtalha.orion.R;
@@ -12,7 +13,7 @@ import com.syedtalha.orion.execution.BotControlRunnable;
 import com.syedtalha.orion.ui.joystick.JoystickMovedListener;
 import com.syedtalha.orion.ui.joystick.JoystickView;
 
-public class NativeManualOverrideActivity extends ActionBarActivity {
+public class NativeManualOverrideActivity extends AppCompatActivity {
 	TextView txtX, txtY;
 	JoystickView joystick;
 
@@ -64,7 +65,7 @@ public class NativeManualOverrideActivity extends ActionBarActivity {
 			txtX.setText("stopped");
 			txtY.setText("stopped");
 			
-		};
+		}
 	};
 
 	/*

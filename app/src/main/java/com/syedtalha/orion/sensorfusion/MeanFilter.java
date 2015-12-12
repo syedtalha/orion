@@ -78,7 +78,7 @@ public class MeanFilter
 
 		for (int i = 0; i < dataLists.size(); i++)
 		{
-			means[i] = (float) getMean(dataLists.get(i));
+			means[i] = getMean(dataLists.get(i));
 		}
 
 		return means;

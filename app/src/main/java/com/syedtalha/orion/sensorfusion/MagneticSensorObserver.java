@@ -33,5 +33,5 @@ public interface MagneticSensorObserver
 	 * @param timeStamp
 	 *            the time stamp of the measurement.
 	 */
-	public void onMagneticSensorChanged(float[] magnetic, long timeStamp);
+	void onMagneticSensorChanged(float[] magnetic, long timeStamp);
 }

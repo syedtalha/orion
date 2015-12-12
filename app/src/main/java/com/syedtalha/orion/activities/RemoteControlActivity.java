@@ -63,7 +63,7 @@ public class RemoteControlActivity extends Activity {
 			txtX.setText("stopped");
 			txtY.setText("stopped");
 			
-		};
+		}
 	};
 
 	private class NetworkTestForRemoteControlTask extends AsyncTask<String, String, Boolean>		{
@@ -81,9 +81,7 @@ public class RemoteControlActivity extends Activity {
 			}
 
 			try {
-				if (remoteControllerRunnable.getServersAddress().isReachable(4000))	{
-					return true;
-				}	else{return false;}
+				return remoteControllerRunnable.getServersAddress().isReachable(4000);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
