@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.syedtalha.orion"
@@ -21,4 +21,6 @@ android {
 dependencies {
     compile 'com.google.android.gms:play-services-location:7.8.0'
     compile 'org.apache.commons:commons-math3:3.5'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+
 }

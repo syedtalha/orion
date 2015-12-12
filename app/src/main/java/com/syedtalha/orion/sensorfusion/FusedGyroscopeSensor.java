@@ -73,7 +73,7 @@ import android.os.Build;
  * Note: The fusion algorithm itself was written by Paul @
  * http://www.thousand-thoughts.com/2012/03/android-sensor-fusion-tutorial/ and
  * taken from his SensorFusion1.zip project. J.W. Alexandar Qiu has credit for
- * the transitions between 179° <–> -179° fix. I have optimized some of the code
+ * the transitions between 179ix. I have optimized some of the code
  * and made it slightly easier to follow and read. I have also changed the
  * SensorManager.getRotationMatrix() to use the gravity sensor instead of the
  * acceleration sensor.
@@ -370,14 +370,7 @@ public class FusedGyroscopeSensor implements GyroscopeSensorObserver,
 	{
 		float oneMinusCoeff = (1.0f - FILTER_COEFFICIENT);
 
-		/*
-		 * Fix for 179° <--> -179° transition problem: Check whether one of the
-		 * two orientation angles (gyro or accMag) is negative while the other
-		 * one is positive. If so, add 360° (2 * math.PI) to the negative value,
-		 * perform the sensor fusion, and remove the 360° from the result if it
-		 * is greater than 180°. This stabilizes the output in
-		 * positive-to-negative-transition cases.
-		 */
+
 
 		// azimuth
 		if (gyroOrientation[0] < -0.5 * Math.PI && orientation[0] > 0.0)
